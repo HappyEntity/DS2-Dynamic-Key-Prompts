@@ -15,6 +15,13 @@
     <File Path="package/DynamicKeyPrompts-xinput1_3-loader-README.txt" />
     <File Path="package/nexus-description.bbcode" />
   </Folder>
+  <Folder Name="/media/">
+    <File Path="media/before-after-bonfire-menu.jpg" />
+    <File Path="media/before-after-bonfire.jpg" />
+    <File Path="media/before-after-lockon.jpg" />
+    <File Path="media/before-after-menu.jpg" />
+    <File Path="media/themes.png" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
     <File Path=".gitattributes" />

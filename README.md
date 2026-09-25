@@ -8,6 +8,8 @@ Dynamic Key Prompts reads **your current key bindings** from the game and shows 
 mouse button in every prompt — menus, the help bar, interaction prompts ("Rest at bonfire"),
 tutorial messages — and updates immediately when you rebind a key.
 
+![Equipment menu: before and after](media/before-after-menu.jpg)
+
 - Key and mouse icons drawn in the game's style (three built-in themes, fully editable), or plain text labels
 - Context aware: in menus A means *Confirm*, in the world it means *Interact* — each resolves to its own key
 - Mouse buttons where you use them (attack = LMB, lock-on = MMB), keys elsewhere — configurable
@@ -22,8 +24,8 @@ tutorial messages — and updates immediately when you rebind a key.
 ## Installation
 
 1. Open the game folder: Steam → Dark Souls II: SotFS → Manage → Browse local files → `Game`.
-   2. Copy `dinput8.dll` and the `DynamicKeyPrompts` folder there
-      (next to `DarkSoulsII.exe`).
+2. Copy `dinput8.dll` and the `DynamicKeyPrompts` folder there
+   (next to `DarkSoulsII.exe`).
 3. Start the game as usual (also through `ds2sc_launcher.exe` for Seamless Co-op).
 
 Uninstall: delete `dinput8.dll` and the `DynamicKeyPrompts` folder.
@@ -45,6 +47,8 @@ Uninstall: delete `dinput8.dll` and the `DynamicKeyPrompts` folder.
 | `[Bindings]` | `<input id>=<text>` | Override the label of a single action |
 
 ### Custom icons
+
+![Built-in themes: dark, minimal, silver](media/themes.png)
 
 Each theme is one sprite sheet in `DynamicKeyPrompts\icons\`: `<theme>.png` with all icons and
 `<theme>.txt` with the rectangle of every icon (`Name X Y Width Height`). The built-in sheets are
