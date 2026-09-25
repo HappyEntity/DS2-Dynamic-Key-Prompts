@@ -4,8 +4,8 @@ namespace DynamicKeyPrompts;
 
 static unsafe class Entry
 {
-    /// Called by the loader at the game's entry point (main thread, Arxan already neutered,
-    /// game CRT not yet initialised — do not touch game globals here).
+    /// Called by the loader at the game's entry point (main thread, Arxan neutered unless started
+    /// by Seamless Co-op, game CRT not yet initialised — do not touch game globals here).
     [UnmanagedCallersOnly(EntryPoint = "DKP_Init")]
     static int Init(LoaderApiNative* api)
     {

@@ -75,7 +75,9 @@ log; pressing F9 in game then writes your current bindings to it. Please attach 
 
 - `dinput8.dll` (or `xinput1_3.dll`) is a small native loader: it forwards DirectInput / XInput to Windows, neuters the game's
   Arxan anti-tamper with [dearxan](https://github.com/tremwil/dearxan) before the game starts, and
-  loads the main module.
+  loads the main module. When the game is started by Seamless Co-op's launcher, dearxan is not used:
+  the loader waits until `ds2sc.dll` has loaded and starts the main module when the game's own code
+  begins to run.
 - `DynamicKeyPrompts.dll` (C#, compiled to native code) hooks the game's text lookup, finds the
   gamepad button characters in each message and replaces them with the key bound to the same action,
   reading the bindings the game itself uses.
