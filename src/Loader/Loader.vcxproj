@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{6D2B6E7A-3C41-4F0B-9B7E-2E8B7A1D4C11}</ProjectGuid>
+    <RootNamespace>Loader</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <!-- Which DLL to impersonate: dinput8 (default) or xinput1_3, e.g. msbuild -p:Proxy=xinput1_3 -->
+    <Proxy Condition="'$(Proxy)'==''">dinput8</Proxy>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+    <WholeProgramOptimization Condition="'$(Configuration)'=='Release'">true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <TargetName>$(Proxy)</TargetName>
+    <OutDir>$(MSBuildThisFileDirectory)..\..\out\$(Configuration)\</OutDir>
+    <IntDir>$(MSBuildThisFileDirectory)..\..\obj\Loader\$(Configuration)\$(Proxy)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\third_party\minhook\include;$(MSBuildThisFileDirectory)..\..\third_party\dearxan\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DKP_PROXY_$(Proxy.ToUpperInvariant());_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <!-- static CRT: the loader must not depend on a VC++ redistributable -->
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>$(MSBuildThisFileDirectory)$(Proxy).def</ModuleDefinitionFile>
+      <!-- Record only the PDB file name in the DLL, not the local build path -->
+      <AdditionalOptions>/PDBALTPATH:%25_PDB%25 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)..\..\third_party\dearxan\lib\dearxan.lib;ntdll.lib;userenv.lib;ws2_32.lib;dbghelp.lib;bcrypt.lib;synchronization.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="proxy_dinput8.cpp" />
+    <ClCompile Include="proxy_xinput1_3.cpp" />
+    <ClCompile Include="..\..\third_party\minhook\src\buffer.c" />
+    <ClCompile Include="..\..\third_party\minhook\src\hook.c" />
+    <ClCompile Include="..\..\third_party\minhook\src\trampoline.c" />
+    <ClCompile Include="..\..\third_party\minhook\src\hde\hde64.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="loader.h" />
+    <ClInclude Include="loader_api.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dinput8.def" />
+    <None Include="xinput1_3.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

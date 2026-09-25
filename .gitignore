@@ -1,0 +1,30 @@
+# Build output
+bin/
+obj/
+out/
+*.user
+*.pdb
+*.ilk
+*.exp
+*.lib
+!third_party/**/*.lib
+
+# IDEs
+.vs/
+.idea/
+.vscode/
+*.DotSettings.user
+
+# Downloaded by build.ps1 (prebuilt, large)
+third_party/dearxan/
+third_party/dearxan-*.zip
+
+# Local test data (game files must never be committed)
+*.fontbnd.dcx
+*.fmg
+*.bdt
+*.bhd
+*.log
+
+# Local reverse-engineering notes
+docs/

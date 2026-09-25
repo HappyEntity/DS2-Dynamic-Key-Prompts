@@ -1,0 +1,60 @@
+[center][size=6][b]Dynamic Key Prompts[/b][/size]
+[size=3]Your actual key bindings in every button prompt[/size][/center]
+
+Dark Souls II: Scholar of the First Sin shows Xbox buttons in its prompts even when you play with keyboard and mouse. Other mods replace the button textures with fixed keys - which is wrong as soon as you rebind anything.
+
+[b]Dynamic Key Prompts reads the bindings from the game itself[/b] and shows the key or mouse button you actually use - and updates the moment you rebind a key.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*]Every prompt: menus, the help bar, interaction prompts ("Rest at bonfire", "Examine"), tutorial messages, menu tabs
+[*]Key and mouse icons in the style of the game, or plain text labels like [E]
+[*]Context aware: in menus A means [i]Confirm[/i], in the world it means [i]Interact[/i] - each shows its own key
+[*]Mouse buttons where you use them (attack = left mouse button, lock-on = middle button), keys elsewhere - configurable
+[*]Three icon themes (dark, minimal, silver) and your own themes from a single editable sprite sheet
+[*]Does not modify any game file - delete one DLL to uninstall
+[*]Compatible with [b]Seamless Co-op[/b], [b]DS2 Lighting Engine[/b] and [b]OptiScaler[/b]; font mods are supported by design (the icons are added to whatever font is installed)
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*]Dark Souls II: Scholar of the First Sin, Steam, latest update
+[*]Windows 10/11 64-bit
+[/list]
+
+[size=4][b]Installation[/b][/size]
+[b]Manual installation[/b] (mod managers are not tested yet):
+[list=1]
+[*]Steam > Dark Souls II: SotFS > Manage > Browse local files > open the [b]Game[/b] folder (the one with DarkSoulsII.exe)
+[*]Copy [b]dinput8.dll[/b] and the [b]DynamicKeyPrompts[/b] folder into it
+[*]Start the game as usual (with Seamless Co-op: through ds2sc_launcher.exe as before)
+[/list]
+
+[b]Uninstall:[/b] delete dinput8.dll and the DynamicKeyPrompts folder.
+
+[size=4][b]Settings[/b][/size]
+Edit [b]DynamicKeyPrompts\DynamicKeyPrompts.ini[/b]:
+[list]
+[*][b]Style[/b] = icons / text
+[*][b]IconTheme[/b] = dark / minimal / silver / your own theme
+[*][b]Labels[/b] = auto / keyboard / mouse / both
+[/list]
+
+[size=4][b]Custom icons[/b][/size]
+After the first start, [b]DynamicKeyPrompts\icons\[/b] contains one sprite sheet per theme ([i]dark.png[/i]) and its layout ([i]dark.txt[/i]). Edit the PNG, or copy both files under a new name and set [b]IconTheme[/b] to it. The mod rebuilds the icons automatically on the next start.
+
+[size=4][b]Compatibility[/b][/size]
+The mod loads through [b]dinput8.dll[/b]. If another mod already uses dinput8.dll, download the optional [b]xinput1_3 loader[/b] file and use its [b]xinput1_3.dll[/b] instead. With Ultimate ASI Loader, dinput8.dll can also be renamed to [b]DynamicKeyPrompts.asi[/b] (not tested). Made to work with every game language (tested with Russian).
+
+[size=4][b]Troubleshooting[/b][/size]
+The mod writes [b]DynamicKeyPrompts\DynamicKeyPrompts.log[/b]. For a bug report set [b]Diagnostics=1[/b] in the ini, reproduce the problem, press [b]F9[/b] in game and attach the log - in the Bugs tab here or on [url=https://github.com/HappyEntity/DS2-Dynamic-Key-Prompts/issues]GitHub Issues[/url].
+
+[size=4][b]Source code[/b][/size]
+Open source under the MIT license: [url=https://github.com/HappyEntity/DS2-Dynamic-Key-Prompts]GitHub[/url]
+
+[size=4][b]Credits[/b][/size]
+[list]
+[*][url=https://github.com/tremwil/dearxan]dearxan[/url] by tremwil
+[*][url=https://github.com/TsudaKageyu/minhook]MinHook[/url] by Tsuda Kageyu
+[*]The Souls modding community for documenting the game's file formats
+[/list]

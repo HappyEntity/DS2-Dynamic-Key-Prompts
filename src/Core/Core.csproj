@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>DynamicKeyPrompts</AssemblyName>
+    <Version>1.0.0</Version>
+    <Product>Dynamic Key Prompts</Product>
+    <Description>Shows the keys you actually bound in Dark Souls II: Scholar of the First Sin button prompts.</Description>
+    <RootNamespace>DynamicKeyPrompts</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>14</LangVersion>
+
+    <!-- Native DLL, no .NET install required on the player's machine -->
+    <PublishAot>true</PublishAot>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <UseSystemResourceKeys>true</UseSystemResourceKeys>
+    <IlcOptimizationPreference>Size</IlcOptimizationPreference>
+    <IlcGenerateStackTraceData>true</IlcGenerateStackTraceData>
+    <!-- We live inside someone else's process: no console, keep GC small and quiet -->
+    <ServerGarbageCollector>false</ServerGarbageCollector>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Record only the PDB file name in the DLL, not the local build path -->
+    <LinkerArg Include="/PDBALTPATH:%25_PDB%25" />
+  </ItemGroup>
+
+</Project>

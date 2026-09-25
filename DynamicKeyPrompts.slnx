@@ -1,0 +1,28 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="src/Common/Common.csproj" />
+    <Project Path="src/Core/Core.csproj" />
+    <Project Path="src/Loader/Loader.vcxproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/Ds2Tool/Ds2Tool.csproj" />
+  </Folder>
+  <Folder Name="/package/">
+    <File Path="package/README.txt" />
+    <File Path="package/README-xinput1_3-loader.txt" />
+    <File Path="package/nexus-description.bbcode" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="build.ps1" />
+    <File Path="CHANGELOG.md" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="THIRD-PARTY-NOTICES.md" />
+  </Folder>
+</Solution>
