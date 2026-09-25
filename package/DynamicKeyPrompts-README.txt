@@ -46,6 +46,7 @@ The mod does not change any of the game's own files.
 
 UPDATING
 --------
+New versions: https://www.nexusmods.com/darksouls2/mods/1738
 Copy the new dinput8.dll and DynamicKeyPrompts.dll over the old ones.
 Keep your DynamicKeyPrompts.ini if you changed settings.
 
@@ -120,6 +121,7 @@ game starts.
   your report.
 
 Report problems on the mod's Nexus page or on GitHub:
+  https://www.nexusmods.com/darksouls2/mods/1738?tab=bugs
   https://github.com/HappyEntity/DS2-Dynamic-Key-Prompts/issues
 
 

@@ -8,6 +8,9 @@ Dynamic Key Prompts reads **your current key bindings** from the game and shows 
 mouse button in every prompt — menus, the help bar, interaction prompts ("Rest at bonfire"),
 tutorial messages — and updates immediately when you rebind a key.
 
+**Download:** [Nexus Mods](https://www.nexusmods.com/darksouls2/mods/1738) ·
+[GitHub Releases](https://github.com/HappyEntity/DS2-Dynamic-Key-Prompts/releases)
+
 ![Equipment menu: before and after](media/before-after-menu.jpg)
 
 - Key and mouse icons drawn in the game's style (three built-in themes, fully editable), or plain text labels
@@ -22,6 +25,9 @@ tutorial messages — and updates immediately when you rebind a key.
 - Windows 10/11 x64
 
 ## Installation
+
+Download the latest release from [Nexus Mods](https://www.nexusmods.com/darksouls2/mods/1738) or
+[GitHub Releases](https://github.com/HappyEntity/DS2-Dynamic-Key-Prompts/releases), then:
 
 1. Open the game folder: Steam → Dark Souls II: SotFS → Manage → Browse local files → `Game`.
 2. Copy `dinput8.dll` and the `DynamicKeyPrompts` folder there
