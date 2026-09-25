@@ -24,6 +24,7 @@ INSTALLATION
 2. Copy into that folder:
      dinput8.dll
      DynamicKeyPrompts   (the whole folder)
+   (this readme does not need to be copied)
 
    It should look like this:
      Game\DarkSoulsII.exe
@@ -133,7 +134,8 @@ CREDITS
 - MinHook by Tsuda Kageyu      https://github.com/TsudaKageyu/minhook
 - The Souls modding community for documenting the game's file formats
 
-License: MIT (see LICENSE). Third-party licenses: THIRD-PARTY-NOTICES.md
+License: MIT, see DynamicKeyPrompts\LICENSE.
+Third-party licenses: DynamicKeyPrompts\THIRD-PARTY-NOTICES.md
 
 
 ---------------------------------------------------------------------

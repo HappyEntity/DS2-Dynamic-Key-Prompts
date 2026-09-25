@@ -72,9 +72,11 @@ Write-Host "Built into $dist (alternative loader: $distAlt)"
 
 if ($Package) {
     $version = ([xml](Get-Content "$root\src\Core\Core.csproj")).Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -First 1
-    # Player-facing readme (install / settings); the repository README is for developers.
-    Copy-Item "$root\package\README.txt", "$root\LICENSE", "$root\THIRD-PARTY-NOTICES.md" "$dist\$modName\"
-    Copy-Item "$root\package\README-xinput1_3-loader.txt" $distAlt
+    # Player-facing readme (install / settings) at the top of the archive, where it is seen first;
+    # the repository README is for developers. Legal files go into the mod folder.
+    Copy-Item "$root\package\$modName-README.txt" $dist
+    Copy-Item "$root\LICENSE", "$root\THIRD-PARTY-NOTICES.md" "$dist\$modName\"
+    Copy-Item "$root\package\$modName-xinput1_3-loader-README.txt" $distAlt
     $zips = @{ "$root\out\$modName-$version.zip" = "$dist\*"; "$root\out\$modName-$version-xinput1_3-loader.zip" = "$distAlt\*" }
     foreach ($zip in $zips.Keys) {
         if (Test-Path $zip) { Remove-Item $zip }

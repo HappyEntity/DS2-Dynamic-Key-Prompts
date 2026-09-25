@@ -11,8 +11,8 @@
     <Project Path="tools/Ds2Tool/Ds2Tool.csproj" />
   </Folder>
   <Folder Name="/package/">
-    <File Path="package/README.txt" />
-    <File Path="package/README-xinput1_3-loader.txt" />
+    <File Path="package/DynamicKeyPrompts-README.txt" />
+    <File Path="package/DynamicKeyPrompts-xinput1_3-loader-README.txt" />
     <File Path="package/nexus-description.bbcode" />
   </Folder>
   <Folder Name="/Solution Items/">
