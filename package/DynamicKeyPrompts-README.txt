@@ -16,6 +16,10 @@ REQUIREMENTS
 
 INSTALLATION
 ------------
+With Vortex: install the mod from its Nexus page ("Mod Manager Download")
+and deploy - Vortex puts the files into the Game folder by itself.
+
+Manually:
 1. Find the game folder:
    Steam > Library > right-click "DARK SOULS II: Scholar of the First Sin"
    > Manage > Browse local files > open the "Game" folder
@@ -40,8 +44,10 @@ The first start takes a moment longer: the mod prepares its icons.
 
 UNINSTALLING
 ------------
-Delete dinput8.dll and the DynamicKeyPrompts folder from the Game folder.
-The mod does not change any of the game's own files.
+Remove the mod in Vortex, or delete dinput8.dll and the DynamicKeyPrompts
+folder from the Game folder. The mod does not change any of the game's own
+files. (Vortex may leave the files the mod created itself - the log, icons
+and cache - in Game\DynamicKeyPrompts; you can delete that folder.)
 
 
 UPDATING

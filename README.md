@@ -26,7 +26,10 @@ tutorial messages — and updates immediately when you rebind a key.
 
 ## Installation
 
-Download the latest release from [Nexus Mods](https://www.nexusmods.com/darksouls2/mods/1738) or
+**Vortex:** use *Mod Manager Download* on the [Nexus Mods page](https://www.nexusmods.com/darksouls2/mods/1738)
+and deploy — the files go to the `Game` folder.
+
+**Manually:** download the latest release from [Nexus Mods](https://www.nexusmods.com/darksouls2/mods/1738) or
 [GitHub Releases](https://github.com/HappyEntity/DS2-Dynamic-Key-Prompts/releases), then:
 
 1. Open the game folder: Steam → Dark Souls II: SotFS → Manage → Browse local files → `Game`.
