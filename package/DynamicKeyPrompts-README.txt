@@ -111,6 +111,19 @@ Key names follow the game (QWERTY, and the game's own German / French
 variants).
 
 
+PLAYING ONLINE
+--------------
+The mod only changes what you see: the prompt text and a copy of the
+font. It doesn't touch saves, params, items or stats and sends nothing
+over the network.
+
+- Seamless Co-op: safe - Seamless uses its own network and doesn't
+  connect to FromSoftware's servers.
+- Official online: very likely fine for the same reasons, but like most
+  DLL mods it hooks game code and disables the game's Arxan anti-tamper,
+  so there is no 100% guarantee. Use at your own risk.
+
+
 TROUBLESHOOTING
 ---------------
 The mod writes DynamicKeyPrompts\DynamicKeyPrompts.log every time the
@@ -159,6 +172,11 @@ Game игры (там, где DarkSoulsII.exe). С Seamless Co-op запуска
 
 Удаление: удалите dinput8.dll и папку DynamicKeyPrompts. Файлы игры мод
 не изменяет.
+
+Онлайн: мод меняет только то, что видите вы (текст подсказок и копию
+шрифта), и ничего не отправляет по сети. С Seamless Co-op это безопасно:
+он не подключается к серверам FromSoftware. На официальных серверах
+риск минимален, но 100% гарантии, как и у любого DLL-мода, нет.
 
 Настройки: DynamicKeyPrompts\DynamicKeyPrompts.ini
   Style      - icons (значки) или text (текст вида [E])

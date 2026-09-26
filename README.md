@@ -65,6 +65,15 @@ written there on first start. Edit a sheet, or copy `dark.png`/`dark.txt` to `my
 and set `IconTheme=mytheme`. Icons are scaled to the game's text height, keeping their proportions;
 the patched font is rebuilt automatically on the next start.
 
+## Playing online
+
+The mod only changes what you see: the prompt text and a copy of the font. It doesn't touch saves,
+params, items or stats and sends nothing over the network.
+
+- **Seamless Co-op:** safe. Seamless uses its own network and doesn't connect to FromSoftware's servers.
+- **Official online:** very likely fine for the same reasons, but like most DLL mods it hooks game code
+  and disables the game's Arxan anti-tamper, so there is no 100% guarantee. Use at your own risk.
+
 ## Troubleshooting
 
 `DynamicKeyPrompts\DynamicKeyPrompts.log` tells what the mod did. Set `Diagnostics=1` for a detailed
@@ -125,4 +134,5 @@ pwsh .\build.ps1 -Package   # build and create the release zips in .\out (main +
 вместо кнопок геймпада, и сразу обновляет их после переназначения. Установка: скопировать
 `dinput8.dll` и папку `DynamicKeyPrompts` в папку `Game` рядом с `DarkSoulsII.exe`. Настройки — в
 `DynamicKeyPrompts\DynamicKeyPrompts.ini`, свои значки — в `DynamicKeyPrompts\icons\`. Совместим с
-Seamless Co-op, DS2 Lighting Engine и OptiScaler.
+Seamless Co-op, DS2 Lighting Engine и OptiScaler. С Seamless Co-op безопасен для онлайна: он не
+подключается к серверам FromSoftware; на официальных серверах 100% гарантии, как у любого DLL-мода, нет.
